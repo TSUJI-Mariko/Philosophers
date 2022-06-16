@@ -12,21 +12,23 @@
 
 #include "../includes/philo.h"
 
+extern int gl;
+//extern pthread_mutex_t mutex;
 void	*thread(void *arg)
 {
-	t_thread *i;
+	t_thread *th;
 	int j;
-	t_sum sum;
+	//pthread_mutex_t mutex;
 
-	i = (t_thread *)arg;
-	j = 0;
-	//i->sum = 0;	
-	while (j < i->data)
+	th = (t_thread *)arg;
+	j = 0;	
+	while (j < th->data)
 	{
-		pthread_mutex_lock(&i->mutex);
-		sum.sum = sum.sum + 1;
-		pthread_mutex_unlock(&i->mutex);
+		pthread_mutex_lock(&th->arg.mutex_sum);
+		gl = gl + 1;
+		pthread_mutex_unlock(&th->arg.mutex_sum);
 		j++;
 	}
+
 	return NULL;
 }

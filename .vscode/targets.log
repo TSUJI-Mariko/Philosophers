@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Tue Jun 14 16:40:42 2022
+# Make data base, printed on Wed Jun 15 11:02:32 2022
 
 # Variables
 
@@ -48,13 +47,13 @@ SHELL = /bin/sh
 # makefile (from 'Makefile', line 29)
 RM = rm -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"f5b8523d60216379ef9ba6dc243eb093.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tj/.config/Code/clp/f5b8523d60216379ef9ba6dc243eb093.ja/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"5c8c40d429ae8165ad0b13c71d693b4b.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/tj/.config/Code/clp/5c8c40d429ae8165ad0b13c71d693b4b.ja/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # makefile (from 'Makefile', line 31)
 CFLAGS = -Wall -Wextra -Werror -pthread -g3 -fsanitize=address 
 # environment
-JOURNAL_STREAM = 8:50367
+JOURNAL_STREAM = 8:50472
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -76,9 +75,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 23)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2077
+MANAGERPID = 2107
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ed92df0b-c663-46bd-acbd-0885131e222b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7cce9cf2-795c-4c66-91ad-29fc79cb8bd8.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -94,7 +93,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2297,unix/tj-MacBookPro:/tmp/.ICE-unix/2297
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2324,unix/tj-MacBookPro:/tmp/.ICE-unix/2324
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -104,7 +103,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 81ee8c629d614d9d8e57da9f6bb8a4b3
+INVOCATION_ID = 4d919d6cb42b4d54b11c78fc7c4026ba
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -114,7 +113,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 17936
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12977
 # automatic
 %F = $(notdir $%)
 # environment
@@ -126,7 +125,7 @@ PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2258
+SSH_AGENT_PID = 2285
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -136,7 +135,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/tj
 # environment
-VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LOGNAME = tj
 # environment
@@ -187,7 +186,6 @@ LESS = -R
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
- 
 # environment
 OLDPWD = /home/tj
 # default
@@ -197,7 +195,7 @@ OLDPWD = /home/tj
 # environment
 LANGUAGE = en_US:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -249,7 +247,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 17936
+VSCODE_PID = 12977
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=19/148=13%
 
@@ -279,7 +277,7 @@ all: philo
 
 philo: srcs/philo.o srcs/outils.o srcs/thread.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-14 16:40:13.461045923
+#  Last modified 2022-06-14 17:18:43.097380668
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 37):
@@ -293,7 +291,8 @@ philo: srcs/philo.o srcs/outils.o srcs/thread.o
 # Not a target:
 srcs/philo.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 16:40:13.273050437
+ 
+#  Last modified 2022-06-14 17:18:42.889385693
 #  File has been updated.
 #  Successfully updated.
 
@@ -305,10 +304,9 @@ Makefile:
 #  Successfully updated.
 
 # Not a target:
- 
 srcs/outils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 16:40:13.345048709
+#  Last modified 2022-06-14 17:18:42.96938376
 #  File has been updated.
 #  Successfully updated.
 
@@ -336,7 +334,7 @@ fclean: clean
 # Not a target:
 srcs/thread.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-14 16:40:13.409047171
+#  Last modified 2022-06-14 17:18:43.045381924
 #  File has been updated.
 #  Successfully updated.
 
@@ -368,6 +366,6 @@ clean:
 # strcache performance: lookups = 43 / hit rate = 48%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Tue Jun 14 16:40:42 2022
+# Finished Make data base on Wed Jun 15 11:02:32 2022
 
  

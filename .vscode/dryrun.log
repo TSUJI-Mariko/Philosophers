@@ -1,5 +1,8 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/tj/Documents/42/Philosophers'
-make: 'philo' is up to date.
+gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/philo.c -o srcs/philo.o
+gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/outils.c -o srcs/outils.o
+gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/thread.c -o srcs/thread.o
+gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  ./srcs/philo.o ./srcs/outils.o ./srcs/thread.o -o philo
 make: Leaving directory '/home/tj/Documents/42/Philosophers'
  

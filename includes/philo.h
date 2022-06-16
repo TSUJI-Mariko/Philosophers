@@ -12,6 +12,7 @@
 
 #ifndef PHILO_H
 # define PHILO_H
+# define SUM 0
 # include <stdio.h>
 # include <unistd.h>
 # include <pthread.h>
@@ -20,17 +21,30 @@
 # include <stdlib.h>
 
 
+typedef struct s_arg
+{
+	pthread_mutex_t mutex_sum;
+}	t_arg;
+
 typedef struct s_thread
 {
 	int	data;
 	int sum;
-	pthread_mutex_t	mutex;
+	//pthread_mutex_t	mutex;
+	t_arg arg;
 }	t_thread;
 
-typedef struct s_sum
+typedef struct s_philo
 {
-	int sum;
-}	t_sum;
+	int	to_die;
+	int to_eat;
+	int to_sleep;
+	int number_of_philo;
+	int id_philo;
+	pthread_mutex_t	left_fork;
+	pthread_mutex_t right_fork;
+	t_arg a;
+}	t_philo;
 
 //thread.c
 void	*thread(void *arg);

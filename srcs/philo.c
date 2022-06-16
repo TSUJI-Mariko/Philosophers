@@ -26,40 +26,51 @@ int	main(int argc, char **argv)
 	return (0);
 }*/
 
+int gl = 0;
+//pthread_mutex_t  mutex;
 int	main(int argc, char **argv)
 {
-	pthread_t	t[100];
+	pthread_t	t[4];
 	int i;
-	t_thread th[100];
-	t_sum sum;
+	t_thread th[4];
 	int av;
+	//th[0].sum = 0;
 
 	i = 0;
-	sum.sum = 0;
-	pthread_mutex_init(&th->mutex, NULL);
+	while (i < 4)
+	{
+		pthread_mutex_init(&th[i].arg.mutex_sum, NULL);
+		i++;
+	}
 	if (argc == 2)
 	{
 		av = ft_atoi(argv[1]);
 		i = 0;
-		while (i < 10)
+		while (i < 4)
 		{
-			th[i].data = av / 10;
+			th[i].data = av / 4;
 			i++;
 		}
 		i = 0;
-		while (i < 10)
+		while (i < 4)
 		{
 			pthread_create(&t[i], NULL, thread, &th[i]);
 			i++;
 		}
 		i = 0;
-		while (i < 10)
+		while (i < 4)
 		{
 			pthread_join(t[i], NULL);
 			i++;
 		}
-		pthread_mutex_destroy(&th->mutex);
-			printf("sum:%d\n", sum.sum);
+		i = 0;
+		while (i < 4)
+		{
+			pthread_mutex_destroy(&th[i].arg.mutex_sum);
+			i++;
+		}
+		printf("sum:%d\n", gl);
 		return (0);
 	}
 }
+
