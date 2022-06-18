@@ -12,23 +12,42 @@
 
 #include "../includes/philo.h"
 
-extern int gl;
+
 //extern pthread_mutex_t mutex;
-void	*thread(void *arg)
+/*void	*thread(void *arg)
 {
 	t_thread *th;
 	int j;
 	//pthread_mutex_t mutex;
-
-	th = (t_thread *)arg;
+	char *str = "bonjour coucou!";
+	th = (t_thread *)arg;	
 	j = 0;	
-	while (j < th->data)
+	pthread_mutex_lock(&th->mutex);
+	while (str[j])
 	{
-		pthread_mutex_lock(&th->arg.mutex_sum);
-		gl = gl + 1;
-		pthread_mutex_unlock(&th->arg.mutex_sum);
+		printf("%c", str[j]);
 		j++;
 	}
-
+	printf("\n");
+	pthread_mutex_unlock(&th->mutex);
 	return NULL;
-}
+}*/
+/*
+void    *thread(void *pp)
+{
+    char *str;
+    int i = 0;
+    t_thread *ppp;
+
+    ppp = (t_thread *)pp;
+    str = "thread 1 : coucou ca va ? \n";
+    pthread_mutex_lock(&ppp->mutex_write); // si on enleve ici
+    while (str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+    pthread_mutex_unlock(&ppp->mutex_write); // si on enleve ici
+    return (NULL);
+}*/
+

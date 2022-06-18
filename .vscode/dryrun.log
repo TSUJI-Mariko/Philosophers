@@ -1,8 +1,10 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/tj/Documents/42/Philosophers'
-gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/philo.c -o srcs/philo.o
-gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/outils.c -o srcs/outils.o
-gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  -I./includes/ -c srcs/thread.c -o srcs/thread.o
-gcc -Wall -Wextra -Werror -pthread -g3 -fsanitize=address  ./srcs/philo.o ./srcs/outils.o ./srcs/thread.o -o philo
+gcc -Wall -Wextra -Werror -g3 -pthread -I./includes/ -c srcs/philo.c -o srcs/philo.o
+ 
+gcc -Wall -Wextra -Werror -g3 -pthread -I./includes/ -c srcs/outils.c -o srcs/outils.o
+gcc -Wall -Wextra -Werror -g3 -pthread -I./includes/ -c srcs/thread.c -o srcs/thread.o
+gcc -Wall -Wextra -Werror -g3 -pthread -I./includes/ -c srcs/check_arg.c -o srcs/check_arg.o
+gcc -Wall -Wextra -Werror -g3 -pthread ./srcs/philo.o ./srcs/outils.o ./srcs/thread.o ./srcs/check_arg.o -o philo
 make: Leaving directory '/home/tj/Documents/42/Philosophers'
  

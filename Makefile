@@ -15,7 +15,7 @@ NAME	=	philo
 SRCS	=	./srcs/philo.c	\
 			./srcs/outils.c	\
 			./srcs/thread.c\
-#			./srcs/-----.c	\
+			./srcs/check_arg.c	\
 #			./srcs/-----.c	\
 #			./srcs/-----.c	\
 #			./srcs/-----.c	\
@@ -28,8 +28,8 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -pthread -g3 -fsanitize=address 
-
+#CFLAGS	=	-Wall -Wextra -Werror -pthread -g3 -fsanitize=thread
+CFLAGS	=	-Wall -Wextra -Werror -g3
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)
 
