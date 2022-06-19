@@ -13,25 +13,46 @@
 #include "../includes/philo.h"
 
 
-//extern pthread_mutex_t mutex;
-/*void	*thread(void *arg)
+void	*thread(void *arg)
 {
-	t_thread *th;
-	int j;
+	t_philo *philo;
 	//pthread_mutex_t mutex;
-	char *str = "bonjour coucou!";
-	th = (t_thread *)arg;	
-	j = 0;	
-	pthread_mutex_lock(&th->mutex);
-	while (str[j])
-	{
-		printf("%c", str[j]);
-		j++;
-	}
-	printf("\n");
-	pthread_mutex_unlock(&th->mutex);
+
+	philo = (t_philo *)arg;		
+	if (philo->id_philo % 2 == 0)
+		short_sleep(philo->philo_arg->to_eat / 10);
+	
+	action(philo);
 	return NULL;
-}*/
+}
+
+
+void	threading(t_pa philo)
+{
+	int i;
+	i = 0;
+	
+	while (i < philo.argument.number_of_philo)
+	{
+		philo.philosophe[i].philo_arg = &philo.argument;
+		if ( pthread_create(&philo.philosophe[i].thread, 
+			NULL, thread, &philo.philosophe[i]) == -1)
+			printf("%s\n", THREAD_ERROR);
+		i++;
+	}
+	i = 0;
+	while (i < philo.argument.number_of_philo)
+	{
+		pthread_join(philo.philosophe[i].thread, NULL);
+		i++;
+	}
+	i = 0;
+	while (i < philo.argument.number_of_philo)
+	{
+		pthread_mutex_destroy(&philo.philosophe[i].left_fork);
+		i++;
+	}
+}
 /*
 void    *thread(void *pp)
 {

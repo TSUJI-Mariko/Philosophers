@@ -16,24 +16,30 @@ int	main(int argc, char **argv)
 {
 	t_pa philo;
 	//t_arg	*arg;
-	int i;
+	//int i;
 
-	i = 0;
 	if (!spread_argument(argc, argv, &philo))
-	{
-		printf("Argument is not corrct\n");
-		exit(1);
-	}	
+
+		return (printf("%s\n", ARG_ERROR));
 	philo.philosophe = malloc(sizeof(t_philo) * philo.argument.number_of_philo);
 	if (!philo.philosophe)
 		exit(1);
-	initialisation(&philo);
-	printf("OK\n");
+	init_philo(&philo);
+	threading(philo);
+	/*
+	i = 0;
+	while (i < philo.argument.number_of_philo)
+	{
+		pthread_join(philo.philosophe[i].thread, NULL);
+		i++;
+	}
+	i = 0;
 	while (i < philo.argument.number_of_philo)
 	{
 		pthread_mutex_destroy(&philo.philosophe[i].left_fork);
 		i++;
-	}
+	}*/
+	printf("%ld\n", get_time());
 	return (0);
 }
 

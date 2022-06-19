@@ -15,7 +15,7 @@ make: *** No rule to make target 'srcs/philo.o', needed by 'philo'.  Stop.
  
 
  
-# Make data base, printed on Sat Jun 18 17:19:34 2022
+# Make data base, printed on Sun Jun 19 18:39:07 2022
  
 
 # Variables
@@ -47,29 +47,17 @@ DESKTOP_SESSION = ubuntu
 .SHELLFLAGS := -c
  
 # environment
- 
 XDG_SESSION_CLASS = user
- 
 # environment
- 
 XDG_SESSION_TYPE = x11
- 
 # environment
- 
 VSCODE_LOG_NATIVE = false
- 
 # automatic
- 
 ?D = $(patsubst %/,%,$(dir $?))
- 
 # environment
- 
 IM_CONFIG_PHASE = 1
- 
 # automatic
- 
 @D = $(patsubst %/,%,$(dir $@))
- 
 # environment
 XAUTHORITY = /run/user/1000/gdm/Xauthority
 # environment
@@ -85,11 +73,11 @@ RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"3cd3bd15e30fa0124a3f232cbca66525.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/share/code/code
-# makefile (from 'Makefile', line 32)
-CFLAGS = -Wall -Wextra -Werror -g3 -pthread
+_ = /usr/bin/dbus-update-activation-environment
+# makefile (from 'Makefile', line 31)
+CFLAGS = -Wall -Wextra -Werror -pthread -g -fsanitize=thread
 # environment
-JOURNAL_STREAM = 8:51367
+JOURNAL_STREAM = 8:49661
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -111,9 +99,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 23)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2097
+MANAGERPID = 2054
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-27b9620d-fb3d-4a57-bf5e-7c0c51077acd.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-59449065-9b04-4e88-bf67-27f89aa4dc39.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -127,9 +115,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2317,unix/tj-MacBookPro:/tmp/.ICE-unix/2317
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2273,unix/tj-MacBookPro:/tmp/.ICE-unix/2273
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -139,17 +125,15 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = ee1074d7c88c4d729e0eacff24ce931e
+INVOCATION_ID = bc9291b103ab45b282463dbeca3aad27
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 24643
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3413
 # automatic
 %F = $(notdir $%)
 # environment
@@ -161,7 +145,7 @@ PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2278
+SSH_AGENT_PID = 2235
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -179,8 +163,6 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
-ZSH = /home/tj/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -195,7 +177,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 15)
-SRCS = ./srcs/philo.c ./srcs/outils.c ./srcs/thread.c ./srcs/check_arg.c 
+SRCS = ./srcs/philo.c ./srcs/outils.c ./srcs/thread.c ./srcs/check_arg.c ./srcs/outil2.c ./srcs/action.c 
 # environment
 SHLVL = 0
 # makefile (from 'Makefile', line 27)
@@ -214,16 +196,12 @@ LC_MONETARY = fr_FR.UTF-8
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 13)
 NAME = philo
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/tj
 # default
 .VARIABLES := 
 # automatic
@@ -233,13 +211,12 @@ LANGUAGE = en_US:en
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.0-main.sock
 # makefile
+ 
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-MAIL = tj@student.42.fr
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -257,8 +234,6 @@ LC_NUMERIC = fr_FR.UTF-8
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-PAGER = less
-# environment
 LC_ALL = C
 # makefile (from 'Makefile', line 25)
 HEADER = ./includes/
@@ -269,6 +244,7 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # default
 SUFFIXES := 
 # environment
+ 
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
@@ -283,9 +259,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 24643
+VSCODE_PID = 3413
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=19/148=13%
+# Load=112/1024=11%, Rehash=0, Collisions=19/141=13%
 
 # Pattern-specific Variable Values
 
@@ -293,9 +269,9 @@ VSCODE_PID = 24643
 
 # Directories
 
-# . (device 2050, inode 14680412): 10 files, no impossibilities.
+# . (device 2050, inode 14680412): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -310,11 +286,11 @@ all: philo
 #  File does not exist.
 #  File has not been updated.
 
-philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o
+philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o srcs/action.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 37):
+#  recipe to execute (from 'Makefile', line 38):
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 .PHONY: all clean fclean re
@@ -337,7 +313,7 @@ srcs/philo.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-18 17:19:10.066529641
+#  Last modified 2022-06-19 18:39:04.156285328
 #  File has been updated.
 #  Successfully updated.
 
@@ -348,24 +324,29 @@ srcs/outils.o:
 #  File has not been updated.
 
 .c.o:
- 
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 35):
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 45):
+#  recipe to execute (from 'Makefile', line 46):
 		$(RM) $(NAME)
 
 # Not a target:
 .DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/action.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -387,23 +368,29 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 42):
+#  recipe to execute (from 'Makefile', line 43):
 		$(RM) $(OBJS)
 
+# Not a target:
+srcs/outil2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 214 B / avg = 8 B
-# current buf: size = 8162 B / used = 214 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 236 B / avg = 9 B
+# current buf: size = 8162 B / used = 236 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 45 / hit rate = 44%
+# strcache performance: lookups = 46 / hit rate = 43%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Sat Jun 18 17:19:34 2022
+# Load=26/8192=0%, Rehash=0, Collisions=1/46=2%
+# Finished Make data base on Sun Jun 19 18:39:07 2022
 
  

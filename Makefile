@@ -16,8 +16,8 @@ SRCS	=	./srcs/philo.c	\
 			./srcs/outils.c	\
 			./srcs/thread.c\
 			./srcs/check_arg.c	\
-#			./srcs/-----.c	\
-#			./srcs/-----.c	\
+			./srcs/outil2.c	\
+			./srcs/action.c	\
 #			./srcs/-----.c	\
 
 OBJS	=	$(SRCS:.c=.o)
@@ -28,8 +28,9 @@ CC	=	gcc
 
 RM	=	rm -f
 
-#CFLAGS	=	-Wall -Wextra -Werror -pthread -g3 -fsanitize=thread
-CFLAGS	=	-Wall -Wextra -Werror -g3
+CFLAGS	=	-Wall -Wextra -Werror -pthread -g -fsanitize=thread
+#CFLAGS	=	-Wall -Wextra -Werror -g3 -pthread
+
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)
 

@@ -12,61 +12,26 @@
 
 #ifndef PHILO_H
 # define PHILO_H
-# define SUM 0
-# include <stdio.h>
-# include <unistd.h>
-# include <pthread.h>
-# include <sys/time.h>
-# include <string.h>
-# include <stdlib.h>
-
-typedef struct s_arg
-{
-	pthread_mutex_t mutex_sum;
-	pthread_mutex_t mutex_write;
-	int	to_die;
-	int to_eat;
-	int to_sleep;
-	int number_of_philo;
-	
-	int must_eat;
-}		t_arg;
-
-typedef struct s_philo
-{
-	int	times_eat;
-	int	finish_eat;
-	int id_philo;
-	pthread_mutex_t	left_fork;
-	pthread_mutex_t *right_fork;
-	t_arg philo_arg;
-}		t_philo;
-
-typedef struct s_pa
-{
-	t_philo		*philosophe;
-	t_arg		argument;
-	int i;
-}				t_pa;
-
-/*typedef struct s_thread
-{
-	int	data;
-	int sum;
-	//pthread_mutex_t	mutex;
-	t_arg arg;
-
-}		t_thread;*/
+# include "argument.h"
+# include "struct.h"
 
 
 //argv_check
 int    check_arg(int argc, char **argv);
 int    spread_argument(int argc, char **argv, t_pa *philo);
+void	init_mutex(t_pa *philo);
 //thread.c
 void	*thread(void *arg);
-int	initialisation(t_pa *p);
+int	init_philo(t_pa *p);
+void	threading(t_pa philo);
 //outils.c
 int	ft_atoi(const char *str);
 int	ft_strlen(char *s);
+//outil2.c
+void    print_status(t_philo *philo, char *str);
+long int    get_time(void);
+void    short_sleep(long int time);
+//action
+void	action(t_philo *philo);
 
 #endif
