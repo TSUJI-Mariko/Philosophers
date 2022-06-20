@@ -55,6 +55,7 @@ int    spread_argument(int argc, char **argv, t_pa *p)
 void    init_mutex(t_pa *philo)
 {
     pthread_mutex_init(&philo->argument.write_status, NULL);
+    pthread_mutex_init(&philo->argument.sleeping, NULL);
 }
 
 int	init_philo(t_pa *p)
@@ -69,6 +70,7 @@ int	init_philo(t_pa *p)
 		p->philosophe[i].id_philo = i + 1;
 		p->philosophe[i].times_eat = 0;
 		p->philosophe[i].last_eat = 0;
+        p->philosophe[i].right_fork = NULL;
 		pthread_mutex_init(&p->philosophe[i].left_fork, NULL);
 		if (p->argument.number_of_philo == 1)
 			return (0);
@@ -76,10 +78,7 @@ int	init_philo(t_pa *p)
 			p->philosophe[i].right_fork = &p->philosophe[0].left_fork; 
 		else
 			p->philosophe[i].right_fork = &p->philosophe[i + 1].left_fork;
-        //printf("id%d:%d\n", i + 1, p->philosophe[i].id_philo);
-        //printer(p->philosophe, "id is");
 		i++;
 	}
-    //printf("%s\n", ARG_TEST);
 	return (0);
 }

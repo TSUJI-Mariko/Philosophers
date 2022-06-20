@@ -33,5 +33,6 @@ long int    get_time(void);
 void    short_sleep(long int time);
 //action
 void	action(t_philo *philo);
+void    think_and_sleep(t_philo *philo);
 
 #endif

@@ -17,7 +17,7 @@
 # define GET_TIME_ERROR "gettimeofday returned -1"
 # define THREAD_ERROR "Thread create return -1"
 # define ARG_TEST "argument is OK"
-# define FORK "has taken  a fork"
+# define FORK "has taken a fork"
 # define EATING "is eating"
 # define SLEEPING "is spleeping"
 # define THINKING "is thinking"

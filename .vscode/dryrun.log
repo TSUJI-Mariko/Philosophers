@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/tj/Documents/42/Philosophers'
 gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/philo.c -o srcs/philo.o
 gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/outils.c -o srcs/outils.o

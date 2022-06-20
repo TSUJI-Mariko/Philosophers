@@ -17,7 +17,7 @@ void    print_status(t_philo *philo, char *str)
     long int time;
     //time = -1;
     time = get_time() - philo->philo_arg->start_time;
-    printf("%ld  %d:%s \n", time, philo->id_philo, str);   
+    printf("%ld\tPhilo %d %s \n", time, philo->id_philo, str);   
 }
 
 long int    get_time(void)

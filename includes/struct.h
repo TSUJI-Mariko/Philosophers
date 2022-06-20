@@ -23,6 +23,9 @@ typedef struct s_arg
 {
 	pthread_mutex_t is_dead;
 	pthread_mutex_t write_status;
+    pthread_mutex_t eating;
+    pthread_mutex_t sleeping;
+    pthread_mutex_t thinking;
 	int	to_die;
 	long long to_eat;
 	int to_sleep;
@@ -36,6 +39,7 @@ typedef struct s_philo
 	int	times_eat;
 	int	last_eat;
 	int id_philo;
+    long int ml_eat;
     pthread_t thread;
 	pthread_mutex_t	left_fork;
 	pthread_mutex_t *right_fork;
@@ -48,14 +52,4 @@ typedef struct s_pa
 	t_arg		argument;
 	int i;
 }				t_pa;
-
-/*typedef struct s_thread
-{
-	int	data;
-	int sum;
-	//pthread_mutex_t	mutex;
-	t_arg arg;
-
-}		t_thread;*/
-
 #endif
