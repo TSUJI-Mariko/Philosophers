@@ -31,6 +31,8 @@ int	ft_strlen(char *s);
 void    print_status(t_philo *philo, char *str);
 long int    get_time(void);
 void    short_sleep(long int time);
+void death_or_alive(t_philo *philo);
+
 //action
 void	action(t_philo *philo);
 void    think_and_sleep(t_philo *philo);

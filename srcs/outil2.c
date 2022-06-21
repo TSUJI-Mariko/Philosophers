@@ -41,3 +41,8 @@ void    short_sleep(long int time)
     while ((get_time() - start) < time)
         usleep(time / 10);
 }
+/*
+void death_or_alive(t_philo *philo)
+{
+
+}*/

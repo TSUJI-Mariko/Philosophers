@@ -26,20 +26,22 @@ typedef struct s_arg
     pthread_mutex_t eating;
     pthread_mutex_t sleeping;
     pthread_mutex_t thinking;
+	pthread_mutex_t finish;
 	int	to_die;
 	long long to_eat;
 	int to_sleep;
 	int number_of_philo;
 	long int start_time;
+	int finish_eat;
 	int must_eat;
 }		t_arg;
 
 typedef struct s_philo
 {
 	int	times_eat;
-	int	last_eat;
+	//int	last_eat;
 	int id_philo;
-    long int ml_eat;
+    long int last_eat;
     pthread_t thread;
 	pthread_mutex_t	left_fork;
 	pthread_mutex_t *right_fork;

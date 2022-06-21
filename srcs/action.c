@@ -30,13 +30,14 @@ void    action(t_philo *philo)
     pthread_mutex_unlock(&philo->philo_arg->write_status);
     pthread_mutex_lock(&philo->philo_arg->write_status);
     pthread_mutex_lock(&philo->philo_arg->eating);
-    philo->ml_eat = get_time();
+    philo->last_eat = get_time();
     print_status(philo, EATING);
     short_sleep(philo->philo_arg->to_eat);
     pthread_mutex_unlock(&philo->philo_arg->write_status);
     pthread_mutex_unlock(&philo->philo_arg->eating);
     pthread_mutex_unlock(philo->right_fork);
     pthread_mutex_unlock(&philo->left_fork);
+    philo->times_eat++;
     think_and_sleep(philo);
 }
 
@@ -50,4 +51,4 @@ void    think_and_sleep(t_philo *philo)
     pthread_mutex_lock(&philo->philo_arg->write_status);
     print_status(philo, THINKING);
     pthread_mutex_unlock(&philo->philo_arg->write_status);
-}
+} 

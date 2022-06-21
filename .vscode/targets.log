@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'srcs/philo.o', needed by 'philo'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 20 09:55:36 2022
+# Make data base, printed on Tue Jun 21 10:21:35 2022
 
 # Variables
 
@@ -77,7 +79,7 @@ OBJS = $(SRCS:.c=.o)
 # environment
 MANAGERPID = 2082
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b01bab36-5258-4f74-bcca-27e77e6316cb.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5b0f8cc9-2527-4d6c-a9f7-e5739ca42f01.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -113,7 +115,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5129
+GIO_LAUNCHED_DESKTOP_FILE_PID = 15533
 # automatic
 %F = $(notdir $%)
 # environment
@@ -247,7 +249,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5129
+VSCODE_PID = 15533
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=19/148=13%
 
@@ -257,9 +259,9 @@ VSCODE_PID = 5129
 
 # Directories
 
-# . (device 2050, inode 14680412): 10 files, no impossibilities.
+# . (device 2050, inode 14680412): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -272,17 +274,15 @@ all: philo
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o srcs/action.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-20 00:02:46.497338435
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 38):
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
- 
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -291,17 +291,15 @@ philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o s
 
 # Not a target:
 srcs/check_arg.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.321342433
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/philo.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.121346976
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -312,10 +310,9 @@ Makefile:
 
 # Not a target:
 srcs/outils.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.177345704
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .c.o:
 #  Implicit rule search has not been done.
@@ -340,17 +337,15 @@ fclean: clean
 
 # Not a target:
 srcs/action.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.449339525
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 srcs/thread.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.245344159
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -368,10 +363,9 @@ clean:
 
 # Not a target:
 srcs/outil2.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-20 00:02:46.385340979
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
 # Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
@@ -384,9 +378,9 @@ srcs/outil2.o:
 # strcache buffers: 1 (0) / strings = 26 / storage = 236 B / avg = 9 B
 # current buf: size = 8162 B / used = 236 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 47 / hit rate = 44%
+# strcache performance: lookups = 46 / hit rate = 43%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/47=2%
-# Finished Make data base on Mon Jun 20 09:55:36 2022
+# Load=26/8192=0%, Rehash=0, Collisions=1/46=2%
+# Finished Make data base on Tue Jun 21 10:21:35 2022
 
  

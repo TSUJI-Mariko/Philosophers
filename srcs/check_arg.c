@@ -42,6 +42,7 @@ int    spread_argument(int argc, char **argv, t_pa *p)
         p->argument.to_eat = ft_atoi(argv[3]);
         p->argument.to_sleep = ft_atoi(argv[4]);
         p->argument.must_eat = 0;
+        p->argument.finish_eat = 0;
         if (argc == 6)
             p->argument.must_eat = ft_atoi(argv[5]);
         if ( p->argument.number_of_philo <= 0 || p->argument.to_die <= 0 
@@ -56,6 +57,7 @@ void    init_mutex(t_pa *philo)
 {
     pthread_mutex_init(&philo->argument.write_status, NULL);
     pthread_mutex_init(&philo->argument.sleeping, NULL);
+    pthread_mutex_init(&philo->argument.finish, NULL);
 }
 
 int	init_philo(t_pa *p)
