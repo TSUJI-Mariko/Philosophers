@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'srcs/philo.o', needed by 'philo'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'srcs/philo.o', needed by 'philo'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 21 10:21:35 2022
+# Make data base, printed on Tue Jun 28 09:37:04 2022
 
 # Variables
 
@@ -49,13 +47,13 @@ SHELL = /bin/sh
 # makefile (from 'Makefile', line 29)
 RM = rm -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"3cd3bd15e30fa0124a3f232cbca66525.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"3cd3bd15e30fa0124a3f232cbca66525.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/share/code/code
+_ = /usr/bin/dbus-update-activation-environment
 # makefile (from 'Makefile', line 31)
 CFLAGS = -Wall -Wextra -Werror -pthread -g -fsanitize=thread
 # environment
-JOURNAL_STREAM = 8:48000
+JOURNAL_STREAM = 8:56340
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -77,9 +75,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 23)
 OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2082
+MANAGERPID = 2660
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5b0f8cc9-2527-4d6c-a9f7-e5739ca42f01.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cff09092-3284-4d95-88cc-d57cc2a6d9a5.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -93,9 +91,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2301,unix/tj-MacBookPro:/tmp/.ICE-unix/2301
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2881,unix/tj-MacBookPro:/tmp/.ICE-unix/2881
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -105,17 +101,15 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 7a8159574f9a433590d2a514eb5714fa
+INVOCATION_ID = 17846cab0ea343da96da543183ac3d69
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 15533
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5457
 # automatic
 %F = $(notdir $%)
 # environment
@@ -127,7 +121,7 @@ PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2262
+SSH_AGENT_PID = 2842
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -137,15 +131,13 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/tj
 # environment
-VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = tj
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
-# environment
-ZSH = /home/tj/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -180,16 +172,12 @@ LC_MONETARY = fr_FR.UTF-8
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 13)
 NAME = philo
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/tj
 # default
 .VARIABLES := 
 # automatic
@@ -197,15 +185,13 @@ OLDPWD = /home/tj
 # environment
 LANGUAGE = en_US:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-MAIL = tj@student.42.fr
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -222,8 +208,6 @@ LC_NUMERIC = fr_FR.UTF-8
 <F = $(notdir $<)
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
-# environment
-PAGER = less
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 25)
@@ -249,9 +233,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 15533
+VSCODE_PID = 5457
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=19/148=13%
+# Load=112/1024=11%, Rehash=0, Collisions=19/141=13%
 
 # Pattern-specific Variable Values
 
@@ -259,9 +243,9 @@ VSCODE_PID = 15533
 
 # Directories
 
-# . (device 2050, inode 14680412): 9 files, no impossibilities.
+# . (device 2050, inode 14680412): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -274,14 +258,15 @@ all: philo
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o srcs/action.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
- 
-#  recipe to execute (from 'Makefile', line 38):
+#  Last modified 2022-06-27 19:50:20.766875539
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 39):
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 .PHONY: all clean fclean re
@@ -291,34 +276,38 @@ philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o s
 
 # Not a target:
 srcs/check_arg.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 19:50:20.590880472
+ 
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 srcs/philo.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-06-27 19:50:20.346887311
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-19 18:39:04.156285328
+#  Last modified 2022-06-26 16:49:46.749420195
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/outils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 19:50:20.434884845
+#  File has been updated.
+#  Successfully updated.
 
 .c.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 36):
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)
 
 fclean: clean
@@ -326,7 +315,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 47):
 		$(RM) $(NAME)
 
 # Not a target:
@@ -337,15 +326,17 @@ fclean: clean
 
 # Not a target:
 srcs/action.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 19:50:20.722876772
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 srcs/thread.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 19:50:20.514882602
+#  File has been updated.
+#  Successfully updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -358,14 +349,15 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 44):
 		$(RM) $(OBJS)
 
 # Not a target:
 srcs/outil2.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-27 19:50:20.658878566
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
 # Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
@@ -378,9 +370,9 @@ srcs/outil2.o:
 # strcache buffers: 1 (0) / strings = 26 / storage = 236 B / avg = 9 B
 # current buf: size = 8162 B / used = 236 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 46 / hit rate = 43%
+# strcache performance: lookups = 47 / hit rate = 44%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/46=2%
-# Finished Make data base on Tue Jun 21 10:21:35 2022
+# Load=26/8192=0%, Rehash=0, Collisions=1/47=2%
+# Finished Make data base on Tue Jun 28 09:37:04 2022
 
  

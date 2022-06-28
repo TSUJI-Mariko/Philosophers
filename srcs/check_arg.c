@@ -43,6 +43,7 @@ int    spread_argument(int argc, char **argv, t_pa *p)
         p->argument.to_sleep = ft_atoi(argv[4]);
         p->argument.must_eat = 0;
         p->argument.finish_eat = 0;
+        p->argument.stop = 0;
         if (argc == 6)
             p->argument.must_eat = ft_atoi(argv[5]);
         if ( p->argument.number_of_philo <= 0 || p->argument.to_die <= 0 
@@ -56,8 +57,10 @@ int    spread_argument(int argc, char **argv, t_pa *p)
 void    init_mutex(t_pa *philo)
 {
     pthread_mutex_init(&philo->argument.write_status, NULL);
-    pthread_mutex_init(&philo->argument.sleeping, NULL);
+    pthread_mutex_init(&philo->argument.meal_check, NULL);
     pthread_mutex_init(&philo->argument.finish, NULL);
+    pthread_mutex_init(&philo->argument.eating, NULL);
+    pthread_mutex_init(&philo->argument.is_dead, NULL);
 }
 
 int	init_philo(t_pa *p)
@@ -71,6 +74,7 @@ int	init_philo(t_pa *p)
 	{
 		p->philosophe[i].id_philo = i + 1;
 		p->philosophe[i].times_eat = 0;
+        p->philosophe[i].stop = 0;
 		p->philosophe[i].last_eat = 0;
         p->philosophe[i].right_fork = NULL;
 		pthread_mutex_init(&p->philosophe[i].left_fork, NULL);
@@ -82,5 +86,5 @@ int	init_philo(t_pa *p)
 			p->philosophe[i].right_fork = &p->philosophe[i + 1].left_fork;
 		i++;
 	}
-	return (0);
+	return (1);
 }
