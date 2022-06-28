@@ -125,7 +125,7 @@ void	*dead(void *arg)
 {
 	t_philo *philo;
 	philo = (t_philo *)arg;
-	long time;
+	long long time;
 	int stop;
 
 	stop = 0;
@@ -143,6 +143,7 @@ void	*dead(void *arg)
 			pthread_mutex_unlock(&philo->philo_arg->is_dead);
 			//death_check(philo, 2);
 			print_status(philo, IS_DEAD);
+			//return (NULL);
 		}
 		else
 			pthread_mutex_unlock(&philo->philo_arg->eating);
@@ -195,17 +196,18 @@ void	*thread(void *arg)
 		pthread_create(&philo->dead, NULL, &dead, arg);
 		go_to_action(philo);
 		pthread_detach(philo->dead);
-		//pthread_mutex_lock(&philo->philo_arg->meal_check);
+		pthread_mutex_lock(&philo->philo_arg->eating);
 		if (philo->times_eat == philo->philo_arg->must_eat)
 		{
-			//pthread_mutex_unlock(&philo->philo_arg->meal_check);
+			pthread_mutex_unlock(&philo->philo_arg->eating);
 			pthread_mutex_lock(&philo->philo_arg->is_dead);
 			philo->stop = 1;
 			pthread_mutex_unlock(&philo->philo_arg->is_dead);
 			//death_check(philo, 2);
 			return NULL;
 		}
-		//pthread_mutex_unlock(&philo->philo_arg->meal_check);
+		else
+			pthread_mutex_unlock(&philo->philo_arg->eating);
 		think_and_sleep(philo);
 		pthread_mutex_lock(&philo->philo_arg->is_dead);
 		stop = philo->stop + philo->philo_arg->stop;

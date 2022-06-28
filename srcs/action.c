@@ -62,10 +62,10 @@ void    action_left(t_philo *philo)
     pthread_mutex_lock(&philo->philo_arg->eating);
     philo->last_eat = get_time();
     //pthread_mutex_lock(&philo->philo_arg->meal_check);
-    philo->times_eat++;
     //pthread_mutex_unlock(&philo->philo_arg->meal_check);
     pthread_mutex_unlock(&philo->philo_arg->eating);
     short_sleep(philo->philo_arg->to_eat);
+     philo->times_eat++;
     pthread_mutex_unlock(philo->right_fork);
     pthread_mutex_unlock(&philo->left_fork);
 
@@ -88,10 +88,10 @@ void    go_to_action(t_philo *philo)
         pthread_mutex_lock(&philo->philo_arg->eating);
         philo->last_eat = get_time();
         //pthread_mutex_lock(&philo->philo_arg->meal_check);
-        philo->times_eat++;
         //pthread_mutex_unlock(&philo->philo_arg->meal_check);
         pthread_mutex_unlock(&philo->philo_arg->eating);
         short_sleep(philo->philo_arg->to_eat);
+        philo->times_eat++;
         pthread_mutex_unlock(&philo->left_fork);
         pthread_mutex_unlock(philo->right_fork);
         }

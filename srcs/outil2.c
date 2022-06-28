@@ -66,9 +66,9 @@ long long    get_time(void)
     return (time);
 }
 
-long int current_time(t_philo *philo)
+long long current_time(t_philo *philo)
 {
-    long int time;
+    long long time;
     time = (get_time() - philo->philo_arg->start_time);
     return (time);
 }

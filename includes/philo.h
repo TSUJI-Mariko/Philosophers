@@ -36,7 +36,7 @@ void    print_status(t_philo *philo, char *str);
 long long    get_time(void);
 void    short_sleep(long int time);
 int death_check(t_philo *philo, int dead);
-long int current_time(t_philo *philo);
+long long current_time(t_philo *philo);
 
 //action
 void	action(t_philo *philo);
