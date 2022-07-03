@@ -14,6 +14,7 @@
 # define ARGUMENT_H
 
 # define ARG_ERROR "Argument is not correct"
+#define ERROR "Error"
 # define GET_TIME_ERROR "gettimeofday returned -1"
 # define THREAD_ERROR "Thread create return -1"
 # define ARG_TEST "argument is OK"

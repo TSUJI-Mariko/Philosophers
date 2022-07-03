@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 28 09:37:04 2022
+# Make data base, printed on Sun Jul  3 21:37:58 2022
 
 # Variables
 
@@ -44,20 +46,16 @@ XMODIFIERS = @im=ibus
 CURDIR := /home/tj/Documents/42/Philosophers
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 29)
-RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"3cd3bd15e30fa0124a3f232cbca66525.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /usr/bin/dbus-update-activation-environment
-# makefile (from 'Makefile', line 31)
-CFLAGS = -Wall -Wextra -Werror -pthread -g -fsanitize=thread
+_ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:56340
+JOURNAL_STREAM = 8:47848
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
@@ -72,12 +70,10 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 23)
-OBJS = $(SRCS:.c=.o)
 # environment
-MANAGERPID = 2660
+MANAGERPID = 2095
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cff09092-3284-4d95-88cc-d57cc2a6d9a5.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-996c13c4-996a-46f0-8fd6-5890d5a392ca.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -91,7 +87,9 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2881,unix/tj-MacBookPro:/tmp/.ICE-unix/2881
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2311,unix/tj-MacBookPro:/tmp/.ICE-unix/2311
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -101,15 +99,17 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 17846cab0ea343da96da543183ac3d69
+INVOCATION_ID = e13fe6493ee44d79ab54981fa66ab8ac
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5457
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3588
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +121,7 @@ PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2842
+SSH_AGENT_PID = 2274
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -139,6 +139,8 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
+ZSH = /home/tj/.oh-my-zsh
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -152,12 +154,8 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 15)
-SRCS = ./srcs/philo.c ./srcs/outils.c ./srcs/thread.c ./srcs/check_arg.c ./srcs/outil2.c ./srcs/action.c 
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 27)
-CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # default
@@ -167,17 +165,19 @@ USER = tj
 # environment
 LC_MONETARY = fr_FR.UTF-8
 # makefile
-.DEFAULT_GOAL := philo
+.DEFAULT_GOAL := 
 # environment
 XDG_CURRENT_DESKTOP = Unity
-# makefile (from 'Makefile', line 13)
-NAME = philo
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/tj
 # default
 .VARIABLES := 
 # automatic
@@ -192,6 +192,8 @@ MAKEFLAGS = pqrR
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+MAIL = tj@student.42.fr
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -209,9 +211,9 @@ LC_NUMERIC = fr_FR.UTF-8
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
+PAGER = less
+# environment
 LC_ALL = C
-# makefile (from 'Makefile', line 25)
-HEADER = ./includes/
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
@@ -233,9 +235,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 5457
+VSCODE_PID = 3588
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=19/141=13%
+# Load=112/1024=11%, Rehash=0, Collisions=17/134=13%
 
 # Pattern-specific Variable Values
 
@@ -253,126 +255,55 @@ VSCODE_PID = 5457
 
 # Files
 
-all: philo
-#  Phony target (prerequisite of .PHONY).
+# Not a target:
+all:
 #  Command line target.
-#  Implicit rule search has not been done.
+#  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
-
-philo: srcs/philo.o srcs/outils.o srcs/thread.o srcs/check_arg.o srcs/outil2.o srcs/action.o
-#  Implicit rule search has not been done.
-#  Last modified 2022-06-27 19:50:20.766875539
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-.PHONY: all clean fclean re
-#  Implicit rule search has not been done.
-#  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-srcs/check_arg.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.590880472
- 
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/philo.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.346887311
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 16:49:46.749420195
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 # Not a target:
-srcs/outils.o:
+makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.434884845
-#  File has been updated.
-#  Successfully updated.
-
-.c.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
-	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)
-
-fclean: clean
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 47):
-		$(RM) $(NAME)
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
-srcs/action.o:
+GNUmakefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.722876772
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-srcs/thread.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.514882602
-#  File has been updated.
-#  Successfully updated.
-
-re: fclean all
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
-		$(RM) $(OBJS)
-
-# Not a target:
-srcs/outil2.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-27 19:50:20.658878566
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 236 B / avg = 9 B
-# current buf: size = 8162 B / used = 236 B / count = 26 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 165 B / avg = 9 B
+# current buf: size = 8162 B / used = 165 B / count = 18 / avg = 9 B
 
-# strcache performance: lookups = 47 / hit rate = 44%
+# strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/47=2%
-# Finished Make data base on Tue Jun 28 09:37:04 2022
+# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
+# Finished Make data base on Sun Jul  3 21:37:58 2022
 
  

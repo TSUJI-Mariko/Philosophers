@@ -10,49 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
-/*int stopper(int stop, t_philo *philo)
-{
-    pthread_mutex_lock(&philo->philo_arg->is_dead);
-    if (stop != 0)
-        philo->philo_arg->stop = stop;
-    if (philo->philo_arg->stop != 0)
-    {
-        pthread_mutex_unlock(&philo->philo_arg->is_dead);
-        return (1);
-    }
-    return (0);
-}*/
+#include "philo.h"
 
 void    print_status(t_philo *philo, char *str)
 {
-    long int time;
+    //long int time;
     //time = -1;
-    pthread_mutex_lock(&philo->philo_arg->write_status);
-    //time = get_time() - philo->philo_arg->start_time;
-    time = current_time(philo);
-    printf("%ld\tPhilo %d %s \n", time, philo->id_philo, str); 
-    pthread_mutex_unlock(&philo->philo_arg->write_status);  
-}
-/*void    print_status(t_philo *philo, char *str, int dead)
-{
-    long int time;
-    //time = -1;
-    pthread_mutex_lock(&philo->philo_arg->is_dead);
-    if (philo->philo_arg->stop == 1)
+    //time = current_time(philo);
+    if (current_time(philo) >= 0 && !death_check(philo, 0))
     {
-        pthread_mutex_lock(&philo->philo_arg->is_dead);
-        return ;
-    }
-    if (dead == 1)
-        philo->philo_arg->stop = 1;
-    pthread_mutex_unlock(&philo->philo_arg->is_dead);
-    pthread_mutex_lock(&philo->philo_arg->write_status);
-    //time = get_time() - philo->philo_arg->start_time;
-    time = current_time(philo);
-    printf("%ld\tPhilo %d %s \n", time, philo->id_philo, str); 
-    pthread_mutex_unlock(&philo->philo_arg->write_status);  
-}*/
+        pthread_mutex_lock(&philo->philo_arg->write_status);
+        //time = get_time() - philo->philo_arg->start_time;
+        printf("%lld\t", current_time(philo)); 
+        printf("Philo %d %s \n", philo->id_philo, str); 
+        pthread_mutex_unlock(&philo->philo_arg->write_status);
+    }  
+}
 
 long long    get_time(void)
 {
@@ -79,7 +52,7 @@ void    short_sleep(long int time)
     start = get_time();
     while ((get_time() - start) < time)
         usleep(time / 10);
-}
+} 
 
 int death_check(t_philo *philo, int dead)
 {
@@ -93,4 +66,10 @@ int death_check(t_philo *philo, int dead)
     }
 	pthread_mutex_unlock(&philo->philo_arg->is_dead);
     return (0);
+}
+
+int ft_error(char *str)
+{
+    printf("%s\n",str);
+    exit(1);
 }

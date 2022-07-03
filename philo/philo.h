@@ -17,7 +17,7 @@
 
 
 //argv_check
-int    check_arg(int argc, char **argv);
+int    check_arg(char **argv);
 int    spread_argument(int argc, char **argv, t_pa *philo);
 void	init_mutex(t_pa *philo);
 //thread.c
@@ -33,6 +33,7 @@ int	ft_strlen(char *s);
 int stopper(int stop, t_philo *philo);
 void    print_status(t_philo *philo, char *str);
 //void    print_status(t_philo *philo, char *str, int dead);
+int ft_error(char *str);
 long long    get_time(void);
 void    short_sleep(long int time);
 int death_check(t_philo *philo, int dead);
@@ -43,6 +44,8 @@ void	action(t_philo *philo);
 void    think_and_sleep(t_philo *philo);
 void    go_to_action(t_philo *philo);
 void    action_left(t_philo *philo);
+void    action_right(t_philo *philo);
 //main
-void cleanup_table(t_pa philo);
+//void cleanup_table(t_pa philo);
+void cleanup_table(t_pa *philo, t_arg *arg);
 #endif

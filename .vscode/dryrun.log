@@ -1,11 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/tj/Documents/42/Philosophers'
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/philo.c -o srcs/philo.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/outils.c -o srcs/outils.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/thread.c -o srcs/thread.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/check_arg.c -o srcs/check_arg.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/outil2.c -o srcs/outil2.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread -I./includes/ -c srcs/action.c -o srcs/action.o
-gcc -Wall -Wextra -Werror -pthread -g -fsanitize=thread ./srcs/philo.o ./srcs/outils.o ./srcs/thread.o ./srcs/check_arg.o ./srcs/outil2.o ./srcs/action.o -o philo
 make: Leaving directory '/home/tj/Documents/42/Philosophers'
  
+make: *** No targets specified and no makefile found.  Stop.
+

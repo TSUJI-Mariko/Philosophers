@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
+#include "philo.h"
 /*
 void    action(t_philo *philo)
 {
@@ -61,40 +61,44 @@ void    action_left(t_philo *philo)
     print_status(philo, EATING);
     pthread_mutex_lock(&philo->philo_arg->eating);
     philo->last_eat = get_time();
+    //philo->times_eat++;
     //pthread_mutex_lock(&philo->philo_arg->meal_check);
     //pthread_mutex_unlock(&philo->philo_arg->meal_check);
     pthread_mutex_unlock(&philo->philo_arg->eating);
     short_sleep(philo->philo_arg->to_eat);
-     philo->times_eat++;
     pthread_mutex_unlock(philo->right_fork);
     pthread_mutex_unlock(&philo->left_fork);
 
 }
+void    action_right(t_philo *philo)
+{
+    pthread_mutex_lock(philo->right_fork);
+	print_status(philo, FORK);
+    if (!philo->right_fork) // philoが1人だった場合
+    {
+        pthread_mutex_unlock(&philo->left_fork);
+        usleep(philo->philo_arg->to_die);
+        return;
+    }
+    pthread_mutex_lock(&philo->left_fork);
+    print_status(philo, FORK);
+    print_status(philo, EATING);
+    pthread_mutex_lock(&philo->philo_arg->eating);
+    philo->last_eat = get_time();
+   //philo->times_eat++;
+    //pthread_mutex_lock(&philo->philo_arg->meal_check);
+    //pthread_mutex_unlock(&philo->philo_arg->meal_check);
+    pthread_mutex_unlock(&philo->philo_arg->eating);
+    short_sleep(philo->philo_arg->to_eat);
+    pthread_mutex_unlock(&philo->left_fork);
+    pthread_mutex_unlock(philo->right_fork);
+}
+
 void    go_to_action(t_philo *philo)
 {
     if (philo->id_philo % 2 == 0)
-    {
-        pthread_mutex_lock(philo->right_fork);
-	    print_status(philo, FORK);
-        if (!philo->right_fork) // philoが1人だった場合
-        {
-            pthread_mutex_unlock(&philo->left_fork);
-            usleep(philo->philo_arg->to_die);
-            return;
-        }
-        pthread_mutex_lock(&philo->left_fork);
-        print_status(philo, FORK);
-        print_status(philo, EATING);
-        pthread_mutex_lock(&philo->philo_arg->eating);
-        philo->last_eat = get_time();
-        //pthread_mutex_lock(&philo->philo_arg->meal_check);
-        //pthread_mutex_unlock(&philo->philo_arg->meal_check);
-        pthread_mutex_unlock(&philo->philo_arg->eating);
-        short_sleep(philo->philo_arg->to_eat);
-        philo->times_eat++;
-        pthread_mutex_unlock(&philo->left_fork);
-        pthread_mutex_unlock(philo->right_fork);
-        }
+        action_right(philo);
     else
         action_left(philo);
+    //think_and_sleep(philo);
 }

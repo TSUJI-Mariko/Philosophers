@@ -24,8 +24,8 @@ typedef struct s_arg
 	pthread_mutex_t is_dead;
 	pthread_mutex_t write_status;
     pthread_mutex_t eating;
-    pthread_mutex_t meal_check;
-    pthread_mutex_t thinking;
+    //pthread_mutex_t meal_check;
+    //pthread_mutex_t thinking;
 	pthread_mutex_t finish;
 	int	to_die;
 	int stop;
@@ -43,6 +43,7 @@ typedef struct s_philo
 	//int	last_eat;
 	int id_philo;
 	int	stop;
+	int stop_eat;
     long long last_eat;
     pthread_t thread;
 	pthread_t dead;
