@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul  3 21:37:58 2022
+# Make data base, printed on Mon Jul  4 23:23:12 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePac
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:47848
+JOURNAL_STREAM = 8:46937
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -71,9 +71,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2095
+MANAGERPID = 2086
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-996c13c4-996a-46f0-8fd6-5890d5a392ca.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-25fcd01e-4fc6-4db3-bfa9-0eac391ef668.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -89,7 +89,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2311,unix/tj-MacBookPro:/tmp/.ICE-unix/2311
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2306,unix/tj-MacBookPro:/tmp/.ICE-unix/2306
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -99,7 +99,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e13fe6493ee44d79ab54981fa66ab8ac
+INVOCATION_ID = 0218113e801a4068a15167883fdc62d6
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -109,7 +109,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3588
+GIO_LAUNCHED_DESKTOP_FILE_PID = 68894
 # automatic
 %F = $(notdir $%)
 # environment
@@ -121,7 +121,7 @@ PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2274
+SSH_AGENT_PID = 2266
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -235,7 +235,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3588
+VSCODE_PID = 68894
 # variable set hash-table stats:
 # Load=112/1024=11%, Rehash=0, Collisions=17/134=13%
 
@@ -245,9 +245,9 @@ VSCODE_PID = 3588
 
 # Directories
 
-# . (device 2050, inode 14680412): 10 files, no impossibilities.
+# . (device 2050, inode 14680412): 8 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,12 +298,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 165 B / avg = 9 B
-# current buf: size = 8162 B / used = 165 B / count = 18 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 16 / storage = 138 B / avg = 8 B
+# current buf: size = 8162 B / used = 138 B / count = 16 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 14%
+# strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Sun Jul  3 21:37:58 2022
+# Load=16/8192=0%, Rehash=0, Collisions=1/19=5%
+# Finished Make data base on Mon Jul  4 23:23:12 2022
 
  

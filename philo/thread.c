@@ -11,50 +11,6 @@
 /* ************************************************************************** */
 
 #include "philo.h"
-//とりあえず動作するバージョン
-/*
-void	*dead(void *arg)
-{
-	t_philo *philo;
-	philo = (t_philo *)arg;
-	//long long time;
-
-	//time = get_time();
-
-	pthread_mutex_lock(&philo->philo_arg->eating);
-	if (!death_check(philo, 0) && 
-		(get_time() - philo->last_eat) >= philo->philo_arg->to_die)
-	{
-		pthread_mutex_unlock(&philo->philo_arg->eating);
-		print_status(philo, IS_DEAD);
-		death_check(philo, 1);
-	}
-	else
-		pthread_mutex_unlock(&philo->philo_arg->eating);
-	return (NULL);
-}
-
-
-void	*dead(void *arg)
-{
-	t_philo *philo;
-	philo = (t_philo *)arg;
-	long long time;
-
-	time = get_time();
-
-	pthread_mutex_lock(&philo->philo_arg->eating);
-	if (!death_check(philo, 0) && 
-		(time - philo->last_eat) >= philo->philo_arg->to_die)
-	{
-		pthread_mutex_unlock(&philo->philo_arg->eating);
-		print_status(philo, IS_DEAD);
-		death_check(philo, 1);
-	}
-	else
-		pthread_mutex_unlock(&philo->philo_arg->eating);
-	return (NULL);
-}*/
 
 void	*dead(void *arg)
 {
@@ -62,27 +18,24 @@ void	*dead(void *arg)
 	philo = (t_philo *)arg;
 	int stop;
 	stop = 0;
-	//long long time;
 
-	//time = get_time();
-	//pthread_mutex_lock(&philo->philo_arg->finish);
 	while (stop == 0)
 	{
 		pthread_mutex_lock(&philo->philo_arg->eating);
 		if ((get_time() - philo->last_eat) >= philo->philo_arg->to_die)
 		{
 			pthread_mutex_unlock(&philo->philo_arg->eating);
-			//pthread_mutex_unlock(&philo->philo_arg->finish);
+			//death_check(philo, 1);
 			print_status(philo, IS_DEAD);
 			death_check(philo, 1);
+			//pthread_mutex_lock(&philo->philo_arg->is_dead);
+			//philo->philo_arg->stop = 1;
+			//pthread_mutex_unlock(&philo->philo_arg->is_dead);
 		}
 		else
-		{
 			pthread_mutex_unlock(&philo->philo_arg->eating);
-			//pthread_mutex_unlock(&philo->philo_arg->finish);
-		}
 		pthread_mutex_lock(&philo->philo_arg->is_dead);
-		stop = philo->philo_arg->stop;
+		stop = philo->philo_arg->stop + philo->stop;
 		pthread_mutex_unlock(&philo->philo_arg->is_dead);
 	}
 	return (NULL);
@@ -90,29 +43,27 @@ void	*dead(void *arg)
 
 void	routine(t_philo *philo)
 {
-	while (death_check(philo, 0) == 0)
+	int stop;
+
+	stop = 0;
+
+	if (philo->id_philo % 2 == 0)
+        short_sleep(philo->philo_arg->to_eat / 10);
+	while (!stop)
 	{
 		go_to_action(philo);
-		if (++philo->times_eat == philo->philo_arg->must_eat)
-		{/*
-			pthread_mutex_lock(&philo->philo_arg->finish);
-			philo->stop_eat = 1;
-			philo->philo_arg->finish_eat++;
-			if (philo->philo_arg->finish_eat == philo->philo_arg->number_of_philo)
-			{
-				pthread_mutex_unlock(&philo->philo_arg->finish);
-				death_check(philo, 2);
-			}
-			else
-				pthread_mutex_unlock(&philo->philo_arg->finish);
-			return;*/
-			//pthread_mutex_lock(&philo->philo_arg->finish);
-			//philo->stop_eat = 1;
-			//pthread_mutex_unlock(&philo->philo_arg->finish);
-			death_check(philo, 1);
+		if (philo->philo_arg->must_eat != -1 
+			&& ++philo->times_eat == philo->philo_arg->must_eat)
+		{
+			pthread_mutex_lock(&philo->philo_arg->is_dead);
+			philo->stop = 1;
+			pthread_mutex_unlock(&philo->philo_arg->is_dead);
 			return ;
 		}
 		think_and_sleep(philo);
+		pthread_mutex_lock(&philo->philo_arg->is_dead);
+		stop = philo->philo_arg->stop + philo->stop;
+		pthread_mutex_unlock(&philo->philo_arg->is_dead);
 	}
 	return;
 }
@@ -120,8 +71,8 @@ void	routine(t_philo *philo)
 void	*thread(void *arg)
 {
 	t_philo *philo;
-	philo = (t_philo *)arg;	
 
+	philo = (t_philo *)arg;	
 	philo->last_eat = philo->philo_arg->start_time;
 	if (pthread_create(&philo->dead, NULL, &dead, philo))
 		return (NULL);
@@ -135,14 +86,17 @@ int	thread_start(t_pa *philo)
 {
 	int i;
 	i = -1;
-	//philo->argument.start_time = get_time();
+
+
+	//printf("%lld:2\n", current_time(philo->philosophe));
+	philo->argument.start_time = get_time();
 	//philo->argument.start_time = 0;
 	while (++i < philo->argument.number_of_philo)
 	{
-		philo->philosophe[i].philo_arg = &philo->argument;
+		//philo->philosophe[i].philo_arg = &philo->argument;
 		if (philo->philosophe[i].philo_arg == NULL)
 			ft_error(THREAD_ERROR);
-		if (pthread_create(&philo->philosophe[i].thread, NULL, thread, &philo->philosophe[i]) != 0)
+		if (pthread_create(&philo->philosophe[i].thread, NULL, thread, &philo->philosophe[i]))
 			ft_error(THREAD_ERROR);
 	}
 	return (1);

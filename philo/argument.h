@@ -22,6 +22,6 @@
 # define EATING "\x1b[31mis eating 🍝\x1b[0m"
 # define SLEEPING "\x1b[32mis spleeping 🥱\x1b[0m"
 # define THINKING "\x1b[33mis thinking 🤔\x1b[0m"
-# define IS_DEAD "\x1b[44mis dead 😈\x1b[0m"
+# define IS_DEAD "\x1b[44mdied 😈\x1b[0m"
 #endif
 

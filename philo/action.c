@@ -46,6 +46,7 @@ void    think_and_sleep(t_philo *philo)
     short_sleep(philo->philo_arg->to_sleep);
     print_status(philo, THINKING);
 } 
+
 void    action_left(t_philo *philo)
 {
     pthread_mutex_lock(&philo->left_fork);
@@ -53,7 +54,7 @@ void    action_left(t_philo *philo)
     if (!philo->right_fork) // philoが1人だった場合
     {
         pthread_mutex_unlock(&philo->left_fork);
-        usleep(philo->philo_arg->to_die);
+        short_sleep(philo->philo_arg->to_die);
         return;
     }
     pthread_mutex_lock(philo->right_fork);
@@ -70,14 +71,15 @@ void    action_left(t_philo *philo)
     pthread_mutex_unlock(&philo->left_fork);
 
 }
+
 void    action_right(t_philo *philo)
 {
     pthread_mutex_lock(philo->right_fork);
 	print_status(philo, FORK);
     if (!philo->right_fork) // philoが1人だった場合
     {
-        pthread_mutex_unlock(&philo->left_fork);
-        usleep(philo->philo_arg->to_die);
+        pthread_mutex_unlock(philo->right_fork);
+        short_sleep(philo->philo_arg->to_die);
         return;
     }
     pthread_mutex_lock(&philo->left_fork);
@@ -96,9 +98,10 @@ void    action_right(t_philo *philo)
 
 void    go_to_action(t_philo *philo)
 {
-    if (philo->id_philo % 2 == 0)
-        action_right(philo);
-    else
-        action_left(philo);
+    //if (philo->id_philo % 2 == 0)
+    //    short_sleep(philo->philo_arg->to_eat / 10);
+    action_left(philo);
+    //else
+    //   action_left(philo);
     //think_and_sleep(philo);
 }

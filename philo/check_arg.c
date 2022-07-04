@@ -34,6 +34,31 @@ int    check_arg(char **argv)
     }
     return (0);
 }
+/*
+int    spread_argument(int argc, char **argv, t_pa *p)
+{
+    if ((argc == 5 || argc == 6) && !check_arg(argv))
+    {
+        p->argument.number_of_philo = ft_atoi(argv[1]);
+        p->argument.to_die = ft_atoi(argv[2]);
+        p->argument.to_eat = ft_atoi(argv[3]);
+        p->argument.to_sleep = ft_atoi(argv[4]);
+        p->argument.must_eat = 0;
+        p->argument.finish_eat = 0;
+        p->argument.stop = 0;
+        p->argument.start_time = 0;
+        if (argc == 6)
+            p->argument.must_eat = ft_atoi(argv[5]);
+        else
+            p->argument.must_eat = -1;
+        if ( p->argument.number_of_philo <= 0 || p->argument.to_die <= 0 
+         || p->argument.to_eat <= 0 || p->argument.to_sleep <= 0) 
+         return (0);
+        return (1);
+    }
+    //init_mutex(p);
+    return (0);
+}*/
 
 int    spread_argument(int argc, char **argv, t_pa *p)
 {
@@ -78,6 +103,7 @@ int	init_philo(t_pa *p)
 	i = 0;
 	while (i < p->argument.number_of_philo)
 	{
+        p->philosophe[i].philo_arg = &p->argument;
 		p->philosophe[i].id_philo = i + 1;
 		p->philosophe[i].times_eat = 0;
         p->philosophe[i].stop = 0;

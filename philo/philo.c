@@ -36,13 +36,17 @@ void cleanup_table(t_pa *philo, t_arg *arg)
 int	main(int argc, char **argv)
 {
 	t_pa philo;
+
 	
 	if (!spread_argument(argc, argv, &philo))
 		ft_error(ARG_ERROR);
 	philo.philosophe = malloc(sizeof(t_philo) * philo.argument.number_of_philo);
 	if (!philo.philosophe)
 		ft_error(ARG_ERROR);
-	if (init_philo(&philo) != 1 || thread_start(&philo) != 1)
+	if (init_philo(&philo) != 1 )
+		ft_error(ARG_ERROR);
+	//printf("%lld\n", get_time() - philo.argument.start_time);
+	if (thread_start(&philo) != 1)
 	{
 		free(philo.philosophe);
 		ft_error(ARG_ERROR);
