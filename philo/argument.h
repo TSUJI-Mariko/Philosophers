@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 12:52:56 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/19 12:52:59 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/05 15:28:17 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ARGUMENT_H
 
 # define ARG_ERROR "Argument is not correct"
-#define ERROR "Error"
+# define ERROR "Error"
 # define GET_TIME_ERROR "gettimeofday returned -1"
 # define THREAD_ERROR "Thread create return -1"
 # define ARG_TEST "argument is OK"
@@ -24,4 +24,3 @@
 # define THINKING "\x1b[33mis thinking 🤔\x1b[0m"
 # define IS_DEAD "\x1b[44mdied 😈\x1b[0m"
 #endif
-

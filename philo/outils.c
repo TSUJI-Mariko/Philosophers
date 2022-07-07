@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:35:54 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/06/14 12:49:59 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/07 16:58:05 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	sign = 1;
 	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -35,15 +35,33 @@ int	ft_atoi(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	return (res * sign); 
+	return (res * sign);
 }
 
 int	ft_strlen(char *s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
+}
+
+void	print_status(t_philo *philo, char *str)
+{
+	pthread_mutex_lock(&philo->philo_arg->is_dead);
+	if (philo->philo_arg->stop == 1)
+	{
+		pthread_mutex_unlock(&philo->philo_arg->is_dead);
+		return ;
+	}
+	if (current_time(philo) >= 0 && philo->philo_arg->stop == 0)
+	{
+		pthread_mutex_lock(&philo->philo_arg->write_status);
+		printf("%lld\t", current_time(philo));
+		printf("Philo %d %s \n", philo->id_philo, str);
+		pthread_mutex_unlock(&philo->philo_arg->write_status);
+	}
+	pthread_mutex_unlock(&philo->philo_arg->is_dead);
 }
