@@ -18,7 +18,6 @@ SRCS	=	philo.c	\
 			check_arg.c	\
 			outil2.c	\
 			action.c	\
-#			./srcs/-----.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -28,9 +27,7 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -pthread -g3 -pthread 
-
-#CFLAGS	=	-Wall -Wextra -Werror -g3 -pthread
+CFLAGS	=	-Wall -Wextra -Werror -g3 -pthread 
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)

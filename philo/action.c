@@ -39,7 +39,7 @@ void	action_left(t_philo *philo)
 	pthread_mutex_unlock(philo->right_fork);
 	pthread_mutex_unlock(&philo->left_fork);
 }
-
+/*
 void	action_right(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
@@ -60,6 +60,7 @@ void	action_right(t_philo *philo)
 	pthread_mutex_unlock(&philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
+*/
 
 /*
 void	go_to_action(t_philo *philo)

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  7 17:09:21 2022
+# Make data base, printed on Wed Jul 13 11:03:26 2022
 
 # Variables
 
@@ -28,8 +28,6 @@ DESKTOP_SESSION = ubuntu
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -47,11 +45,11 @@ CURDIR := /home/tj/Documents/42/Philosophers
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"3cd3bd15e30fa0124a3f232cbca66525.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/tj/.config/Code/clp/3cd3bd15e30fa0124a3f232cbca66525.ja/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"96f3e8db934f372e4b51ec41decd7891.ja","_translationsConfigFile":"/home/tj/.config/Code/clp/96f3e8db934f372e4b51ec41decd7891.ja/tcf.json","_cacheRoot":"/home/tj/.config/Code/clp/96f3e8db934f372e4b51ec41decd7891.ja","_resolvedLanguagePackCoreLocation":"/home/tj/.config/Code/clp/96f3e8db934f372e4b51ec41decd7891.ja/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9","_corruptedFile":"/home/tj/.config/Code/clp/96f3e8db934f372e4b51ec41decd7891.ja/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:48889
+JOURNAL_STREAM = 8:50696
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -69,11 +67,7 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-MANAGERPID = 2109
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-07991ec3-3815-4d6a-894a-94ba31a3e574.sock
+MANAGERPID = 2140
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -89,17 +83,15 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2330,unix/tj-MacBookPro:/tmp/.ICE-unix/2330
+SESSION_MANAGER = local/tj-MacBookPro:@/tmp/.ICE-unix/2358,unix/tj-MacBookPro:/tmp/.ICE-unix/2358
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-VSCODE_LOG_STACK = false
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 273e21de382945469dd7b82046aec2d4
+INVOCATION_ID = 734144474bb4473097f294898dc3be61
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -109,19 +101,17 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 21550
+GIO_LAUNCHED_DESKTOP_FILE_PID = 19059
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
 PWD = /home/tj/Documents/42/Philosophers
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2290
+SSH_AGENT_PID = 2321
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -131,7 +121,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/tj
 # environment
-VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /home/tj/.config/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
 LOGNAME = tj
 # environment
@@ -179,14 +169,13 @@ MAKE_COMMAND := make
 # environment
 OLDPWD = /home/tj
 # default
- 
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
 LANGUAGE = en_US:en
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-ad2a177a-1.69.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -196,6 +185,7 @@ MFLAGS = -pqrR
 # environment
 MAIL = tj@student.42.fr
 # automatic
+ 
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
@@ -236,9 +226,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 21550
+VSCODE_PID = 19059
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=17/134=13%
+# Load=107/1024=10%, Rehash=0, Collisions=17/129=13%
 
 # Pattern-specific Variable Values
 
@@ -246,9 +236,9 @@ VSCODE_PID = 21550
 
 # Directories
 
-# . (device 2050, inode 14680412): 6 files, no impossibilities.
+# . (device 2050, inode 14680412): 5 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 5 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,12 +288,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 115 B / avg = 8 B
-# current buf: size = 8162 B / used = 115 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 13 / storage = 109 B / avg = 8 B
+# current buf: size = 8162 B / used = 109 B / count = 13 / avg = 8 B
 
-# strcache performance: lookups = 17 / hit rate = 17%
+# strcache performance: lookups = 16 / hit rate = 18%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
-# Finished Make data base on Thu Jul  7 17:09:21 2022
+# Load=13/8192=0%, Rehash=0, Collisions=1/16=6%
+# Finished Make data base on Wed Jul 13 11:03:26 2022
 
  
