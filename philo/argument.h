@@ -12,7 +12,7 @@
 
 #ifndef ARGUMENT_H
 # define ARGUMENT_H
-
+/*
 # define ARG_ERROR "Argument is not correct"
 # define ERROR "Error"
 # define GET_TIME_ERROR "gettimeofday returned -1"
@@ -23,4 +23,15 @@
 # define SLEEPING "\x1b[32mis spleeping 🥱\x1b[0m"
 # define THINKING "\x1b[33mis thinking 🤔\x1b[0m"
 # define IS_DEAD "\x1b[44mdied 😈\x1b[0m"
+*/
+# define ARG_ERROR "Argument is not correct"
+# define ERROR "Error"
+# define GET_TIME_ERROR "gettimeofday returned -1"
+# define THREAD_ERROR "Thread create return -1"
+# define ARG_TEST "argument is OK"
+# define FORK "has taken a fork"
+# define EATING "is eating"
+# define SLEEPING "is spleeping"
+# define THINKING "is thinking"
+# define IS_DEAD "died"
 #endif

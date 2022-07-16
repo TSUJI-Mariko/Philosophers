@@ -39,6 +39,7 @@ long long	get_time(void);
 void		short_sleep(long int time);
 void		death_check(t_philo *philo, int dead);
 long long	current_time(t_philo *philo);
+void	ft_putnbr_fd(int nb, int fd);
 
 //action
 void		action(t_philo *philo);

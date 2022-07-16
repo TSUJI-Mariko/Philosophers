@@ -24,9 +24,6 @@ void	cleanup_table(t_pa *philo, t_arg *arg)
 	i = -1;
 	while (++i < arg->number_of_philo)
 		pthread_mutex_destroy(&philo->philosophe[i].left_fork);
-	if (arg->stop == 2)
-		printf("%lld\tevery philosophers eated %d times\n",
-			get_time() - arg->start_time, arg->must_eat);
 	free(philo->philosophe);
 }
 

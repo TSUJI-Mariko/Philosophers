@@ -1,6 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/tj/Documents/42/Philosophers'
-make: Leaving directory '/home/tj/Documents/42/Philosophers'
- 
-make: *** No targets specified and no makefile found.  Stop.
-

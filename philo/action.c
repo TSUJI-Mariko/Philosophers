@@ -39,7 +39,7 @@ void	action_left(t_philo *philo)
 	pthread_mutex_unlock(philo->right_fork);
 	pthread_mutex_unlock(&philo->left_fork);
 }
-/*
+
 void	action_right(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
@@ -60,16 +60,16 @@ void	action_right(t_philo *philo)
 	pthread_mutex_unlock(&philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
-*/
 
-/*
+
+
 void	go_to_action(t_philo *philo)
 {
-	//if (philo->id_philo % 2 == 0)
+	if (philo->id_philo % 2 == 0)
 	//	short_sleep(philo->philo_arg->to_eat / 10);
-	//	action_right(philo);
-	//else
+		action_right(philo);
+	else
 		action_left(philo);
-	//think_and_sleep(philo);
+	think_and_sleep(philo);
 }
-*/
+

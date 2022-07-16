@@ -6,7 +6,7 @@
 #    By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 12:23:43 by mtsuji            #+#    #+#              #
-#    Updated: 2022/06/14 13:13:14 by mtsuji           ###   ########.fr        #
+#    Updated: 2022/07/16 17:39:32 by msuji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -g3 -pthread 
+CFLAGS	=	-Wall -Wextra -Werror -pthread
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)

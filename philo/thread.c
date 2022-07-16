@@ -46,7 +46,8 @@ void	routine(t_philo *philo)
 		short_sleep(philo->philo_arg->to_eat / 10);
 	while (!stop)
 	{
-		action_left(philo);
+		//action_left(philo);
+		go_to_action(philo);
 		if (philo->philo_arg->must_eat != -1
 			&& ++philo->times_eat == philo->philo_arg->must_eat)
 		{

@@ -59,8 +59,14 @@ void	print_status(t_philo *philo, char *str)
 	if (current_time(philo) >= 0 && philo->philo_arg->stop == 0)
 	{
 		pthread_mutex_lock(&philo->philo_arg->write_status);
-		printf("%lld\t", current_time(philo));
-		printf("Philo %d %s \n", philo->id_philo, str);
+		//printf("%lld\t", current_time(philo));
+		ft_putnbr_fd(current_time(philo), 1);
+		//printf("Philo %d %s \n", philo->id_philo, str);
+		write(1, "\tPhilo ", 7);
+		ft_putnbr_fd(philo->id_philo, 1);
+		write(1, " ", 1);
+		write(1, str, ft_strlen(str));
+		write(1, "\n", 2);
 		pthread_mutex_unlock(&philo->philo_arg->write_status);
 	}
 	pthread_mutex_unlock(&philo->philo_arg->is_dead);
