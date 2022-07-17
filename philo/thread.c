@@ -36,14 +36,15 @@ void	*dead(void *arg)
 	}
 	return (NULL);
 }
-
+/*
 void	routine(t_philo *philo)
 {
 	int	stop;
 
 	stop = 0;
 	if (philo->id_philo % 2 == 0)
-		short_sleep(philo->philo_arg->to_eat / 10);
+		//short_sleep(philo->philo_arg->to_eat / 10);
+		usleep(15000);
 	while (!stop)
 	{
 		//action_left(philo);
@@ -62,6 +63,40 @@ void	routine(t_philo *philo)
 		pthread_mutex_unlock(&philo->philo_arg->is_dead);
 	}
 	return ;
+}
+*/
+
+void	*routine(t_philo *philo)
+{
+	int	stop;
+
+	stop = 0;
+	if (philo->id_philo % 2 == 0)
+		short_sleep(philo->philo_arg->to_eat / 10);
+		//usleep(15000);
+	while (1)
+	{
+		action_right(philo);
+		//go_to_action(philo);
+		if (philo->philo_arg->must_eat != -1
+			&& ++philo->times_eat == philo->philo_arg->must_eat)
+		{
+			pthread_mutex_lock(&philo->philo_arg->is_dead);
+			philo->stop = 1;
+			pthread_mutex_unlock(&philo->philo_arg->is_dead);
+			break ;
+		}
+		think_and_sleep(philo);
+		pthread_mutex_lock(&philo->philo_arg->is_dead);
+		stop = philo->philo_arg->stop + philo->stop;
+		if (stop)
+		{
+			pthread_mutex_unlock(&philo->philo_arg->is_dead);
+			break ;
+		}
+		pthread_mutex_unlock(&philo->philo_arg->is_dead);
+	}
+	return(TRUE);
 }
 
 void	*thread(void *arg)
@@ -91,5 +126,8 @@ int	thread_start(t_pa *philo)
 				thread, &philo->philosophe[i]))
 			ft_error(THREAD_ERROR);
 	}
+	i = -1;
+	while (++i < philo->argument.number_of_philo)
+		pthread_join(philo->philosophe[i].thread, NULL);
 	return (1);
 }

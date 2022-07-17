@@ -15,16 +15,17 @@
 void	cleanup_table(t_pa *philo, t_arg *arg)
 {
 	int	i;
-
+/*
 	i = -1;
 	while (++i < arg->number_of_philo)
 		pthread_join(philo->philosophe[i].thread, NULL);
+		*/
 	pthread_mutex_destroy(&arg->finish);
 	pthread_mutex_destroy(&arg->write_status);
 	i = -1;
 	while (++i < arg->number_of_philo)
 		pthread_mutex_destroy(&philo->philosophe[i].left_fork);
-	free(philo->philosophe);
+	//free(philo->philosophe);
 }
 
 int	main(int argc, char **argv)

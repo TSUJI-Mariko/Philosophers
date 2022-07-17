@@ -27,7 +27,7 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -pthread
+CFLAGS	=	-Wall -Wextra -Werror -pthread #-fsanitize=thread
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $(<:.c=.o)

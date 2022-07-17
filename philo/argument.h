@@ -34,4 +34,5 @@
 # define SLEEPING "is spleeping"
 # define THINKING "is thinking"
 # define IS_DEAD "died"
+# define TRUE 0
 #endif

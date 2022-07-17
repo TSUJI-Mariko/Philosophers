@@ -22,7 +22,7 @@ void		init_mutex(t_pa *philo);
 
 //thread.c
 void		*dead(void *arg);
-void		routine(t_philo *philo);
+void		*routine(t_philo *philo);
 void		*thread(void *arg);
 int			init_philo(t_pa *p);
 int			thread_start(t_pa *philo);

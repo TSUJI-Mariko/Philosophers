@@ -66,10 +66,10 @@ void	action_right(t_philo *philo)
 void	go_to_action(t_philo *philo)
 {
 	if (philo->id_philo % 2 == 0)
-	//	short_sleep(philo->philo_arg->to_eat / 10);
-		action_right(philo);
-	else
-		action_left(philo);
-	think_and_sleep(philo);
+		short_sleep(philo->philo_arg->to_eat / 10);
+	//action_right(philo);
+	//else
+		//action_left(philo);
+	//think_and_sleep(philo);
 }
 
