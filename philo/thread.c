@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:12:37 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/07 16:51:05 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/18 12:14:14 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void	*routine(t_philo *philo)
 
 	stop = 0;
 	if (philo->id_philo % 2 == 0)
-		short_sleep(philo->philo_arg->to_eat / 10);
-		//usleep(15000);
+		//short_sleep(philo->philo_arg->to_eat / 10);
+		usleep(15000);
 	while (1)
 	{
 		action_right(philo);
@@ -96,7 +96,7 @@ void	*routine(t_philo *philo)
 		}
 		pthread_mutex_unlock(&philo->philo_arg->is_dead);
 	}
-	return(TRUE);
+	return(0);
 }
 
 void	*thread(void *arg)
