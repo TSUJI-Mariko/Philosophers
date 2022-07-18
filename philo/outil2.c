@@ -41,7 +41,7 @@ void	short_sleep(long int time)
 		usleep(time / 10);
 }
 
-void	death_check(t_philo *philo, int dead)
+int	death_check(t_philo *philo, int dead)
 {
 	pthread_mutex_lock(&philo->philo_arg->is_dead);
 	if (dead == 1)
@@ -49,10 +49,10 @@ void	death_check(t_philo *philo, int dead)
 	if (philo->philo_arg->stop == 1)
 	{
 		pthread_mutex_unlock(&philo->philo_arg->is_dead);
-		return ;
+		return (1);
 	}
 	pthread_mutex_unlock(&philo->philo_arg->is_dead);
-	return ;
+	return (0);
 }
 
 int	ft_error(char *str)

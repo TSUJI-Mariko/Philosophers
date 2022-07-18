@@ -44,12 +44,12 @@ void	action_right(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
 	print_status(philo, FORK);
-	if (!philo->right_fork)
+	/*if (!philo->right_fork)
 	{
 		pthread_mutex_unlock(philo->right_fork);
 		short_sleep(philo->philo_arg->to_die);
 		return ;
-	}
+	}*/
 	pthread_mutex_lock(&philo->left_fork);
 	print_status(philo, FORK);
 	pthread_mutex_lock(&philo->philo_arg->eating);
@@ -65,13 +65,10 @@ void	action_right(t_philo *philo)
 
 void	go_to_action(t_philo *philo)
 {
-	//if (philo->id_philo % 2 == 0)
-	//{
-		//short_sleep(philo->philo_arg->to_eat / 10);
+	if (philo->id_philo % 2 )
 		action_left(philo);
-	//}
-	//else
-	//	action_right(philo);
+	else
+		action_right(philo);
 	//think_and_sleep(philo);
 }
 
