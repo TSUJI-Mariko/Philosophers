@@ -30,12 +30,12 @@ int			thread_start(t_pa *philo);
 //outils.c
 int			ft_atoi(const char *str);
 int			ft_strlen(char *s);
-void		ft_usleep(void);
+void		ft_usleep(t_philo *philo);
 
 //outil2.c
 int			stopper(int stop, t_philo *philo);
 void		print_status(t_philo *philo, char *str);
-int			ft_error(char *str);
+int			ft_error(char *str, t_philo *philo);
 long long	get_time(void);
 void		short_sleep(long int time);
 int		death_check(t_philo *philo, int dead);

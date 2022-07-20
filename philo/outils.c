@@ -95,11 +95,8 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 }
 
-void	ft_usleep(void)
+void	ft_usleep(t_philo *philo)
 {
-	usleep(2);
-	usleep(2);
-	usleep(2);
-	usleep(2);
-	usleep(2);
+	if (usleep(1000) == -1)
+		ft_error(SLEEP_ERROR, philo);
 }

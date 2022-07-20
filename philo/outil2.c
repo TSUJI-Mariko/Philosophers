@@ -55,8 +55,9 @@ int	death_check(t_philo *philo, int dead)
 	return (0);
 }
 
-int	ft_error(char *str)
+int	ft_error(char *str, t_philo *philo)
 {
 	printf("%s\n", str);
+	free(philo);
 	exit(1);
 }

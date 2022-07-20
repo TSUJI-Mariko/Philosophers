@@ -44,7 +44,7 @@ void	routine(t_philo *philo)
 
 	stop = 0;
 	if (philo->id_philo % 2 == 0)
-		ft_usleep();
+		ft_usleep(philo);
 	while (!stop)
 	{
 		//go_to_action(philo);
@@ -90,10 +90,10 @@ int	thread_start(t_pa *philo)
 		while (++i < philo->argument.number_of_philo)
 		{
 			if (philo->philosophe[i].philo_arg == NULL)
-				ft_error(THREAD_ERROR);
+				ft_error(THREAD_ERROR, philo->philosophe);
 			if (pthread_create(&philo->philosophe[i].thread, NULL,
 					thread, &philo->philosophe[i]))
-				ft_error(THREAD_ERROR);
+				ft_error(THREAD_ERROR, philo->philosophe);
 		}
 	}
 	else /*plus de 100 philo*/
@@ -105,10 +105,10 @@ int	thread_start(t_pa *philo)
 		while (++i < 100 && ++j < philo->argument.number_of_philo)
 		{
 			if (philo->philosophe[i].philo_arg == NULL || philo->philosophe[j].philo_arg == NULL)
-				ft_error(THREAD_ERROR);
+				ft_error(THREAD_ERROR, philo->philosophe);
 			if (pthread_create(&philo->philosophe[i].thread, NULL, thread, &philo->philosophe[i])
 				|| pthread_create(&philo->philosophe[j].thread, NULL, thread, &philo->philosophe[j]))
-				ft_error(THREAD_ERROR);
+				ft_error(THREAD_ERROR, philo->philosophe);
 		}
 		/*while (++j < philo->argument.number_of_philo)
 		{
@@ -121,6 +121,9 @@ int	thread_start(t_pa *philo)
 	}
 	i = -1;
 	while (++i < philo->argument.number_of_philo)
-		pthread_join(philo->philosophe[i].thread, NULL);
+	{
+		if (pthread_join(philo->philosophe[i].thread, NULL))
+			ft_error(THREAD_ERROR, philo->philosophe);
+	}
 	return (1);
 }
