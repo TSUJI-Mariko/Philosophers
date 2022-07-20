@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:16:39 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/07 16:36:00 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/20 12:12:04 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		init_mutex(t_pa *philo);
 
 //thread.c
 void		*dead(void *arg);
-void		*routine(t_philo *philo);
+void		routine(t_philo *philo);
 void		*thread(void *arg);
 int			init_philo(t_pa *p);
 int			thread_start(t_pa *philo);
@@ -30,6 +30,7 @@ int			thread_start(t_pa *philo);
 //outils.c
 int			ft_atoi(const char *str);
 int			ft_strlen(char *s);
+void		ft_usleep(void);
 
 //outil2.c
 int			stopper(int stop, t_philo *philo);

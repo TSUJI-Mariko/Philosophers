@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:12:37 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/18 18:56:33 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/20 12:25:38 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	*dead(void *arg)
 	while (stop == 0)
 	{
 		pthread_mutex_lock(&philo->philo_arg->eating);
-		if ((get_time() - philo->last_eat) >= philo->philo_arg->to_die)
+		if (!death_check(philo, 0) && (get_time() - philo->last_eat)
+			>= philo->philo_arg->to_die)
 		{
 			pthread_mutex_unlock(&philo->philo_arg->eating);
 			print_status(philo, IS_DEAD);
@@ -36,19 +37,18 @@ void	*dead(void *arg)
 	}
 	return (NULL);
 }
-/*
+
 void	routine(t_philo *philo)
 {
 	int	stop;
 
 	stop = 0;
 	if (philo->id_philo % 2 == 0)
-		//short_sleep(philo->philo_arg->to_eat / 10);
-		usleep(15000);
+		ft_usleep();
 	while (!stop)
 	{
-		//action_left(philo);
-		go_to_action(philo);
+		//go_to_action(philo);
+		action_left(philo);
 		if (philo->philo_arg->must_eat != -1
 			&& ++philo->times_eat == philo->philo_arg->must_eat)
 		{
@@ -64,39 +64,6 @@ void	routine(t_philo *philo)
 	}
 	return ;
 }
-*/
-
-void	*routine(t_philo *philo)
-{
-	int	stop;
-
-	stop = 0;
-	if (philo->id_philo % 2 == 0)
-		short_sleep(philo->philo_arg->to_eat / 10);
-		//usleep(15000);
-	while (1)
-	{
-			go_to_action(philo);
-		if (philo->philo_arg->must_eat != -1
-			&& ++philo->times_eat == philo->philo_arg->must_eat)
-		{
-			pthread_mutex_lock(&philo->philo_arg->is_dead);
-			philo->stop = 1;
-			pthread_mutex_unlock(&philo->philo_arg->is_dead);
-			break ;
-		}
-		think_and_sleep(philo);
-		pthread_mutex_lock(&philo->philo_arg->is_dead);
-		stop = philo->philo_arg->stop + philo->stop;
-		if (stop)
-		{
-			pthread_mutex_unlock(&philo->philo_arg->is_dead);
-			break ;
-		}
-		pthread_mutex_unlock(&philo->philo_arg->is_dead);
-	}
-	return(NULL);
-}
 
 void	*thread(void *arg)
 {
@@ -111,12 +78,13 @@ void	*thread(void *arg)
 	return (NULL);
 }
 
+
 int	thread_start(t_pa *philo)
 {
 	int	i;
 
 	philo->argument.start_time = get_time();
-	if (philo->argument.number_of_philo < 100)
+	if (philo->argument.number_of_philo < 100) /*jusqu'a 100 philo*/
 	{
 		i = -1;
 		while (++i < philo->argument.number_of_philo)
@@ -128,7 +96,7 @@ int	thread_start(t_pa *philo)
 				ft_error(THREAD_ERROR);
 		}
 	}
-	else
+	else /*plus de 100 philo*/
 	{
 		int j;
 

@@ -65,10 +65,9 @@ void	action_right(t_philo *philo)
 
 void	go_to_action(t_philo *philo)
 {
-	if (philo->id_philo % 2 )
+	if (philo->id_philo % 2)
 		action_left(philo);
 	else
 		action_right(philo);
-	//think_and_sleep(philo);
 }
 

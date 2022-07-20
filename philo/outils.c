@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:35:54 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/07 16:58:05 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/20 12:11:36 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,36 @@ void	print_status(t_philo *philo, char *str)
 		pthread_mutex_unlock(&philo->philo_arg->write_status);
 	}
 	pthread_mutex_unlock(&philo->philo_arg->is_dead);
+}
+
+void	ft_putnbr_fd(int nb, int fd)
+{
+	char	c;
+	long	a;
+
+	a = nb;
+	if (a < 0)
+	{
+		write(fd, "-", 1);
+		a = a * -1;
+	}
+	if (a >= 10)
+	{
+		ft_putnbr_fd((int)(a / 10), fd);
+		ft_putnbr_fd((int)(a % 10), fd);
+	}
+	else
+	{
+		c = a + '0';
+		write(fd, &c, 1);
+	}
+}
+
+void	ft_usleep(void)
+{
+	usleep(2);
+	usleep(2);
+	usleep(2);
+	usleep(2);
+	usleep(2);
 }
