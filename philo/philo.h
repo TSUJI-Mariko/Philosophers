@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:16:39 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/20 12:12:04 by msuji            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:09:38 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void		routine(t_philo *philo);
 void		*thread(void *arg);
 int			init_philo(t_pa *p);
 int			thread_start(t_pa *philo);
+void		threading_many_philo(t_pa *philo);
 
 //outils.c
 int			ft_atoi(const char *str);
@@ -38,9 +39,9 @@ void		print_status(t_philo *philo, char *str);
 int			ft_error(char *str, t_philo *philo);
 long long	get_time(void);
 void		short_sleep(long int time);
-int		death_check(t_philo *philo, int dead);
+int			death_check(t_philo *philo, int dead);
 long long	current_time(t_philo *philo);
-void	ft_putnbr_fd(int nb, int fd);
+void		ft_putnbr_fd(int nb, int fd);
 
 //action
 void		action(t_philo *philo);

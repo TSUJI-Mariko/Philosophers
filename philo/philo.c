@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:28:56 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/20 17:40:32 by msuji            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:10:21 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 void	cleanup_table(t_pa *philo, t_arg *arg)
 {
 	int	i;
-/*
-	i = -1;
-	while (++i < arg->number_of_philo)
-		pthread_join(philo->philosophe[i].thread, NULL);
-		*/
+
 	pthread_mutex_destroy(&arg->finish);
 	pthread_mutex_destroy(&arg->write_status);
 	i = -1;
@@ -28,7 +24,7 @@ void	cleanup_table(t_pa *philo, t_arg *arg)
 		if (pthread_mutex_destroy(&philo->philosophe[i].left_fork))
 			ft_error(ERROR, philo->philosophe);
 	}
-	//free(philo->philosophe);
+	free(philo->philosophe);
 }
 
 int	main(int argc, char **argv)

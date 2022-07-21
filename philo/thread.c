@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:12:37 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/20 12:25:38 by msuji            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:12:36 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	routine(t_philo *philo)
 		ft_usleep(philo);
 	while (!stop)
 	{
-		//go_to_action(philo);
 		action_left(philo);
 		if (philo->philo_arg->must_eat != -1
 			&& ++philo->times_eat == philo->philo_arg->must_eat)
@@ -74,17 +73,16 @@ void	*thread(void *arg)
 	if (pthread_create(&philo->dead, NULL, &dead, philo))
 		return (NULL);
 	routine(philo);
-	pthread_detach(philo->dead);
+	pthread_join(philo->dead, NULL);
 	return (NULL);
 }
-
 
 int	thread_start(t_pa *philo)
 {
 	int	i;
 
 	philo->argument.start_time = get_time();
-	if (philo->argument.number_of_philo < 100) /*jusqu'a 100 philo*/
+	if (philo->argument.number_of_philo < 100)
 	{
 		i = -1;
 		while (++i < philo->argument.number_of_philo)
@@ -96,34 +94,30 @@ int	thread_start(t_pa *philo)
 				ft_error(THREAD_ERROR, philo->philosophe);
 		}
 	}
-	else /*plus de 100 philo*/
-	{
-		int j;
-
-		i = -1;
-		j = 99;
-		while (++i < 100 && ++j < philo->argument.number_of_philo)
-		{
-			if (philo->philosophe[i].philo_arg == NULL || philo->philosophe[j].philo_arg == NULL)
-				ft_error(THREAD_ERROR, philo->philosophe);
-			if (pthread_create(&philo->philosophe[i].thread, NULL, thread, &philo->philosophe[i])
-				|| pthread_create(&philo->philosophe[j].thread, NULL, thread, &philo->philosophe[j]))
-				ft_error(THREAD_ERROR, philo->philosophe);
-		}
-		/*while (++j < philo->argument.number_of_philo)
-		{
-			if (philo->philosophe[j].philo_arg == NULL)
-				ft_error(THREAD_ERROR);
-			if (pthread_create(&philo->philosophe[j].thread, NULL, thread, &philo->philosophe[j]))
-				ft_error(THREAD_ERROR);
-		}*/
-
-	}
+	else
+		threading_many_philo(philo);
 	i = -1;
 	while (++i < philo->argument.number_of_philo)
+		pthread_join(philo->philosophe[i].thread, NULL);
+	return (1);
+}
+
+void	threading_many_philo(t_pa *philo)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	j = 99;
+	while (++i < 100 && ++j < philo->argument.number_of_philo)
 	{
-		if (pthread_join(philo->philosophe[i].thread, NULL))
+		if (philo->philosophe[i].philo_arg == NULL
+			|| philo->philosophe[j].philo_arg == NULL)
+			ft_error(THREAD_ERROR, philo->philosophe);
+		if (pthread_create(&philo->philosophe[i].thread,
+				NULL, thread, &philo->philosophe[i])
+			|| pthread_create(&philo->philosophe[j].thread,
+				NULL, thread, &philo->philosophe[j]))
 			ft_error(THREAD_ERROR, philo->philosophe);
 	}
-	return (1);
 }
