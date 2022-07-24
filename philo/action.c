@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:38:45 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/24 22:43:17 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/24 23:03:22 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,33 @@ void	think_and_sleep(t_philo *philo)
 	print_status(philo, THINKING);
 }
 
-void	action_left(t_philo *philo)
+int	take_fork(t_philo *philo)
 {
-	pthread_mutex_lock(&philo->left_fork);
-	print_status(philo, FORK);
-	if (!philo->right_fork)
+	if (philo->id_philo % 2)
 	{
-		pthread_mutex_unlock(&philo->left_fork);
-		short_sleep(philo->philo_arg->to_die, philo);
-		return ;
+		pthread_mutex_lock(&philo->left_fork);
+		print_status(philo, FORK);
+		if (!philo->right_fork)
+		{
+			pthread_mutex_unlock(&philo->left_fork);
+			short_sleep(philo->philo_arg->to_die, philo);
+			return (0);
+		}
 	}
 	pthread_mutex_lock(philo->right_fork);
+	if (philo->id_philo % 2 == 0)
+	{
+		pthread_mutex_lock(&philo->left_fork);
+		print_status(philo, FORK);
+	}
 	print_status(philo, FORK);
+	return (1);
+}
+
+void	eating(t_philo *philo)
+{
+	if (take_fork(philo) == 0)
+		return ;
 	pthread_mutex_lock(&philo->philo_arg->eating);
 	philo->last_eat = get_time();
 	pthread_mutex_unlock(&philo->philo_arg->eating);
@@ -40,6 +55,7 @@ void	action_left(t_philo *philo)
 	pthread_mutex_unlock(&philo->left_fork);
 }
 
+/*
 void	action_right(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
@@ -54,11 +70,4 @@ void	action_right(t_philo *philo)
 	pthread_mutex_unlock(&philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
-
-void	go_to_action(t_philo *philo)
-{
-	if (philo->id_philo % 2)
-		action_left(philo);
-	else
-		action_right(philo);
-}
+*/

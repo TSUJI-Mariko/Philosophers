@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:16:39 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/21 12:09:38 by msuji            ###   ########.fr       */
+/*   Updated: 2022/07/24 23:23:17 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ void		ft_putnbr_fd(int nb, int fd);
 void		action(t_philo *philo);
 void		think_and_sleep(t_philo *philo);
 void		go_to_action(t_philo *philo);
-void		action_left(t_philo *philo);
+int			take_fork(t_philo *philo);
 void		action_right(t_philo *philo);
+void		eating(t_philo *philo);
 
 //main
 void		cleanup_table(t_pa *philo, t_arg *arg);

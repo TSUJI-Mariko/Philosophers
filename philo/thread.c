@@ -49,7 +49,7 @@ void	*thread(void *arg)
 		ft_usleep(philo);
 	while (!stop)
 	{
-		go_to_action(philo);
+		eating(philo);
 		if (philo->philo_arg->must_eat != -1
 			&& ++philo->times_eat == philo->philo_arg->must_eat)
 		{

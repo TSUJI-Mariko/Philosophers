@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 17:25:21 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/24 22:43:39 by mtsuji           ###   ########.fr       */
+/*   Updated: 2022/07/24 22:57:01 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	short_sleep(long int time, t_philo *philo)
 	{
 		if ((get_time() - start) >= time)
 			break ;
-		usleep(100);
+		usleep(50);
 	}
 }
 
