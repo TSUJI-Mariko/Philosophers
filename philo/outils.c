@@ -60,7 +60,7 @@ void	print_status(t_philo *philo, char *str)
 	{
 		pthread_mutex_lock(&philo->philo_arg->write_status);
 		ft_putnbr_fd(current_time(philo), 1);
-		write(1, "\tPhilo ", 7);
+		write(1, "\t", 1);
 		ft_putnbr_fd(philo->id_philo, 1);
 		write(1, " ", 1);
 		write(1, str, ft_strlen(str));

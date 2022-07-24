@@ -6,7 +6,7 @@
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 17:25:21 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/07/20 12:08:13 by msuji            ###   ########.fr       */
+/*   Updated: 2022/07/24 22:43:39 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,26 @@ long long	current_time(t_philo *philo)
 	return (time);
 }
 
-void	short_sleep(long int time)
+/*void	short_sleep(long int time)
 {
 	long int	start;
 
 	start = get_time();
 	while ((get_time() - start) < time)
 		usleep(time / 10);
+}*/
+
+void	short_sleep(long int time, t_philo *philo)
+{
+	long int	start;
+
+	start = get_time();
+	while (death_check(philo, 0) == 0)
+	{
+		if ((get_time() - start) >= time)
+			break ;
+		usleep(100);
+	}
 }
 
 int	death_check(t_philo *philo, int dead)

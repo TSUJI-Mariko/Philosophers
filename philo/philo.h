@@ -38,7 +38,7 @@ int			stopper(int stop, t_philo *philo);
 void		print_status(t_philo *philo, char *str);
 int			ft_error(char *str, t_philo *philo);
 long long	get_time(void);
-void		short_sleep(long int time);
+void		short_sleep(long int time, t_philo *philo);
 int			death_check(t_philo *philo, int dead);
 long long	current_time(t_philo *philo);
 void		ft_putnbr_fd(int nb, int fd);
