@@ -17,11 +17,12 @@ void	think_and_sleep(t_philo *philo)
 	print_status(philo, SLEEPING);
 	short_sleep(philo->philo_arg->to_sleep, philo);
 	print_status(philo, THINKING);
+	ft_usleep(philo);
 }
 
 int	take_fork(t_philo *philo)
 {
-	if (philo->id_philo % 2)
+	if (philo->id_philo % 2 == 1)
 	{
 		pthread_mutex_lock(&philo->left_fork);
 		print_status(philo, FORK);

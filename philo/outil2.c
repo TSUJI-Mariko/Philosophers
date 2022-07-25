@@ -50,7 +50,8 @@ void	short_sleep(long int time, t_philo *philo)
 	{
 		if ((get_time() - start) >= time)
 			break ;
-		usleep(50);
+		if (usleep(50) == -1)
+			ft_error(SLEEP_ERROR, philo);
 	}
 }
 
